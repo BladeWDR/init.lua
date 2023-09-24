@@ -23,6 +23,7 @@ return {
         -- ensure these language parsers are installed
         ensure_installed = {
           -- "help",
+          "hcl",
           "yaml",
           "markdown",
           "markdown_inline",
@@ -31,6 +32,7 @@ return {
           "vim",
           "dockerfile",
           "gitignore",
+          "vimdoc",
         },
         -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
         context_commentstring = {

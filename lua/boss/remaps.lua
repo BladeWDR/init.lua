@@ -28,3 +28,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- open UndoTree.
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- change the working directory to the current file.
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
