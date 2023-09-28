@@ -21,6 +21,12 @@ return {
     )
     keymap.set(
       "n",
+      "<leader>R",
+      "<cmd>lua require('harpoon.mark').clear_all()<cr>",
+      { desc = "unmark file with harpoon" }
+    )
+    keymap.set(
+      "n",
       "<C-e>",
       "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
       { desc = "Go to previous harpoon mark" }
