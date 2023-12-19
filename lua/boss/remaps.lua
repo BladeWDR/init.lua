@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
 vim.keymap.set("n", "<leader>P", [["+P]])
 
+-- remap WW to save.
+vim.keymap.set("n", "WW", ":w")
+
 -- remap ctrl+c to the escape key
 vim.keymap.set({"i", "v"}, "<C-c>", "<Esc>")
 
