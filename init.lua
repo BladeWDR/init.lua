@@ -15,5 +15,5 @@ vim.opt.rtp:prepend(lazypath)
 -- Need to set the leader key here so that the mapping is loaded before lazy.nvim
 vim.g.mapleader = " "
 
-require("lazy").setup("boss.plugins")
-require("boss")
+require("lazy").setup("plugins")
+require("config")
