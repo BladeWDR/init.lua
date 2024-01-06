@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"lua_ls", "ansiblels","bashls","docker_compose_language_service","pyright","terraformls","hydra_lsp"}
+                ensure_installed = {"lua_ls", "ansiblels","bashls","docker_compose_language_service","pyright","terraformls","hydra_lsp","powershell_es"}
             })
         end
     },
