@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"lua_ls", "ansiblels","bashls","docker_compose_language_service","pyright","terraformls","hydra_lsp","powershell_es"}
+                ensure_installed = {"lua_ls", "ansiblels","bashls","pyright","terraformls","powershell_es"}
             })
         end
     },
@@ -21,6 +21,11 @@ return {
             lspconfig.powershell_es.setup({
                 bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/",
             })
+            lspconfig.ansiblels.setup({})
+            lspconfig.bashls.setup({})
+            lspconfig.pyright.setup({})
+            lspconfig.terraformls.setup({})
+            lspconfig.terraformls.setup({})
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
             vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
