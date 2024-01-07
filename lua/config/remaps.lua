@@ -26,6 +26,9 @@ vim.keymap.set({"i", "v"}, "<C-c>", "<Esc>")
 -- do search and replace for word the cursor is on in normal mode.
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- enclose selection in double quotes.
+vim.keymap.set("n", "<leader>q", [[:s/\<<C-r><C-w>\>/"<C-r><C-w>"<CR>]])
+
 -- set the current file type to yaml.ansible
 vim.keymap.set("n", "<leader>ya", "<cmd>set ft=yaml.ansible<CR>")
 
