@@ -1,60 +1,23 @@
 return {
   "ThePrimeagen/harpoon",
+  branch = "harpoon2",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
   config = function()
     -- set keymaps
-    local keymap = vim.keymap -- for conciseness
 
-    keymap.set(
-      "n",
-      "<leader>a",
-      "<cmd>lua require('harpoon.mark').add_file()<cr>",
-      { desc = "Mark file with harpoon" }
-    )
-    keymap.set(
-      "n",
-      "<leader>r",
-      "<cmd>lua require('harpoon.mark').rm_file()<cr>",
-      { desc = "unmark file with harpoon" }
-    )
-    keymap.set(
-      "n",
-      "<leader>R",
-      "<cmd>lua require('harpoon.mark').clear_all()<cr>",
-      { desc = "unmark file with harpoon" }
-    )
-    keymap.set(
-      "n",
-      "<C-e>",
-      "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
-      { desc = "Go to previous harpoon mark" }
-    )
-    keymap.set(
-      "n",
-      "<C-h>",
-      "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",
-      { desc = "Go to first file" }
-        )
-    keymap.set(
-      "n",
-      "<C-j>",
-      "<cmd>lua require('harpoon.ui').nav_file(2)<cr>",
-      { desc = "Go to first file" }
-        )
-    keymap.set(
-      "n",
-      "<C-k>",
-      "<cmd>lua require('harpoon.ui').nav_file(3)<cr>",
-      { desc = "Go to first file" }
-        )
-    keymap.set(
-      "n",
-      "<C-l>",
-      "<cmd>lua require('harpoon.ui').nav_file(4)<cr>",
-      { desc = "Go to first file" }
-        )
+        -- local keymap = vim.keymap -- for conciseness
+        local harpoon = require("harpoon")
+
+        harpoon.setup()
+        vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
+        vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+        vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+        vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
+        vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+        vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+
   end,
 }
-
