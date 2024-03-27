@@ -1,5 +1,12 @@
 -- vim.opt.guicursor = ""
 
+vim.diagnostic.config({
+    virtual_text = false, --turn off inline diagnostics as it was unreadable with LSP.
+})
+
+vim.cmd('autocmd CursorHold * lua vim.diagnostic.open_float()')
+vim.o.updatetime = 300
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
