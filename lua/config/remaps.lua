@@ -40,3 +40,6 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- change the working directory to the current file.
 vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
+
+-- toggle wrap / nowrap
+vim.keymap.set("n", "<leader>W", ":set wrap!<CR>")
