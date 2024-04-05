@@ -9,6 +9,6 @@ return {
     vim.keymap.set('n', '<leader>gd', ":G diff<cr>"),
     vim.keymap.set('n', '<leader>bg', ":G blame<cr>"),
     vim.keymap.set('n', '<leader>gc', ":G commit<cr>"),
-    vim.keymap.set('n', '<leader>gu', ":G push<cr>"),
+    vim.keymap.set('n', '<leader>gy', ":G push<cr>"),
 
 }
