@@ -43,3 +43,6 @@ vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
 
 -- toggle wrap / nowrap
 vim.keymap.set("n", "<leader>W", ":set wrap!<CR>")
+
+-- source luasnips.
+vim.keymap.set("n", "<leader>v", ":source ~/.config/nvim/lua/plugins/completions.lua<CR>")
