@@ -15,6 +15,9 @@ vim.diagnostic.config({
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Set the listchars options 
+vim.o.listchars = 'trail:-,nbsp:+,tab:▏ ,leadmultispace:▏ ,eol:↲'
+vim.opt.list = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
