@@ -6,5 +6,6 @@
 
 return {
     "ixru/nvim-markdown",
+    enabled = false,
     ft = "markdown",
 }

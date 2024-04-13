@@ -43,3 +43,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.opt.fileformat = unix
+
