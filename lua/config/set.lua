@@ -1,16 +1,16 @@
 -- vim.opt.guicursor = ""
 
-vim.diagnostic.config({
-    virtual_text = false, -- Turn off inline diagnostics
-    float = {
-        source = "always",
-        update_in_insert = true,
-        severity_sort = true,
-    },
-})
-
-  vim.o.updatetime = 250
-  vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, max_width=80})]]
+-- vim.diagnostic.config({
+--     virtual_text = false, -- Turn off inline diagnostics
+--     float = {
+--         source = "always",
+--         update_in_insert = true,
+--         severity_sort = true,
+--     },
+-- })
+--
+  -- vim.o.updatetime = 250
+  -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, max_width=80})]]
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
