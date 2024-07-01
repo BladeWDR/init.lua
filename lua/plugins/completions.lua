@@ -9,6 +9,7 @@ return {
       "rafamadriz/friendly-snippets",
       "onsails/lspkind.nvim",
     },
+    opts = { update_events = {"TextChanged", "TextChangedI"}},
   },
   {
     "hrsh7th/nvim-cmp",
@@ -27,20 +28,55 @@ return {
             local func = ls.function_node
             local choice = ls.choice_node
             local dynamicn = ls.dynamic_node
+            local fmt = require("luasnip.extras.fmt").fmt
+            local rep = require("luasnip.extras").rep
 
             local date = function() return {os.date('%Y-%m-%d')} end
+            local keymap = vim.api.nvim_set_keymap
+            local opts = { noremap = true, silent = true }
+            keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+            keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+            keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+            keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
 
             ls.add_snippets(nil, {
                 markdown = {
                     snip({
-                        trig = "---",
+                        trig = "meta",
                         namr = "yaml frontmatter with tags",
                         dscr = "YAML frontmatter with tags."
                     },{
-                        text{"---",
-                        "tags:", "  -"},
-                        insert(1, {" tag", "---"}),
+                        text({"---",
+                        "title: "}), insert(1, "note_title"), text({"",
+                        "date: "}), func(date, {}), text({"",
+                        "tags: ["}), insert(2, "tags"), text({"]",
+                        "---", ""}),
+                        insert(0),
+                       }),
+                    snip({
+                        trig = "project",
+                        namr = "Project Template",
+                        dscr = "Project Template for wiki."
+                    },{
+                        text({
+                        "---",
+                        "title: "}), insert(1, "note_title"), text({"",
+                        "date: "}), func(date, {}), text({"",
+                        "tags: [ project, "}), insert(2, "tags"), text({"]",
+                        "---", "",
+                        "",
+                        "# "}), rep(1),
+                        text({
+                        "",
+                        "",
+                        "## Immediate next task:",
+                        "",
+                        "## Tasks:",
+                        "",
+                        "* "
+                        }),
+                        insert(0)
                        }),
                 },
                 yaml = {
@@ -50,13 +86,20 @@ return {
                             dscr = "Typical traefik router setup.",
                         },
                         {
-                           text({"labels:",
-                                  "- traefik.enable=true",
-                                  "- traefik.http.routers.routername.rule=Host(`subdomain.domain.tld`)",
-                                  "- traefik.http.routers.routername.service=servicename",
-                                  "- traefik.http.routers.routername.tls=true",
-                                  "- traefik.http.services.servicename.loadbalancer.server.port=80",
-                                  "- traefik.docker.network=proxy"})
+                           text({
+                                "labels:",
+                                "  - traefik.enable=true",
+                                "  - traefik.http.routers."}),insert(1, "routername"),text({".rule=Host(`"}), insert(2, "subdomain.domain.tld"), text({"`)",
+                                "  - traefik.http.routers."}), rep(1), text({"service="}), insert(3, "servicename"),
+                                text({
+                                  "",
+                                  "  - traefik.http.routers."}), rep(1), text({".tls=true",
+                                  "  - traefik.http.services."}),
+                                rep(3), text({".loadbalancer.server.port="}), insert(4, "port #"),
+                                text({
+                                  "",
+                                  "  - trafik.docker.network="}), insert(5, "traefik_network"),
+                                insert(0),
                         }),
                 },
             })
