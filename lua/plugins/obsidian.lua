@@ -19,5 +19,23 @@ return {
         path = "~/git/wiki",
       },
     },
+    ui = {
+        enable = false
+    },
+    mappings = {
+     ["<leader>on"] = {
+      action = function()
+        return ":ObsidianNew <CR>"
+      end,
+      opts = { noremap = false, expr = true, buffer = true },
+    },
+    },
+    notes_subdir = ".",
+    -- this function overrides the default behavior of note_id_func, which is to add the date timestamp and 4 random characters to build the filename.
+    -- Instead, this just takes whatever you put as the argument for :ObsidianNew and uses that as the filename.
+    note_id_func = function(title)
+        return title
+    end,
+    new_notes_location = "current_dir",
   },
 }
