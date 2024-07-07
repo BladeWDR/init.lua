@@ -29,6 +29,12 @@ return {
       end,
       opts = { noremap = false, expr = true, buffer = true },
     },
+    ["gf"] = {
+      action = function()
+        return require("obsidian").util.gf_passthrough()
+      end,
+      opts = { noremap = false, expr = true, buffer = true },
+    },
     },
     notes_subdir = ".",
     -- this function overrides the default behavior of note_id_func, which is to add the date timestamp and 4 random characters to build the filename.
