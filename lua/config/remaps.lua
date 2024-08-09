@@ -43,3 +43,9 @@ vim.keymap.set("n", "<leader>W", ":set wrap!<CR>")
 
 -- source luasnips.
 vim.keymap.set("n", "<leader>v", ":source ~/.config/nvim/lua/plugins/completions.lua<CR>")
+
+-- add remap to set clipboard=unnamedplus
+vim.keymap.set("n", "<leader>vv", ":set clipboard=unnamedplus<CR>")
+
+-- enable spellcheck
+vim.keymap.set("n", "<leader>z", ":setlocal spell spelllang=en_us<CR>")
