@@ -54,3 +54,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.cmd[[colorscheme tokyonight-night]]
+
+-- Add undo points for punctuation - useful when writing something other than code.
+vim.keymap.set('i', '!', '!<C-g>u', { noremap = true, silent = true })
+vim.keymap.set('i', ',', ',<C-g>u', { noremap = true, silent = true })
+vim.keymap.set('i', '.', '.<C-g>u', { noremap = true, silent = true })
+vim.keymap.set('i', ':', ':<C-g>u', { noremap = true, silent = true })
+vim.keymap.set('i', ';', ';<C-g>u', { noremap = true, silent = true })
+vim.keymap.set('i', '?', '?<C-g>u', { noremap = true, silent = true })
+vim.keymap.set('i', '(', '<C-g>u(', { noremap = true, silent = true })
+vim.keymap.set('i', ')', ')<C-g>u', { noremap = true, silent = true })
