@@ -49,3 +49,6 @@ vim.keymap.set("n", "<leader>vv", ":set clipboard=unnamedplus<CR>")
 
 -- enable spellcheck
 vim.keymap.set("n", "<leader>z", ":setlocal spell spelllang=en_us<CR>")
+
+-- correct previous spelling mistake while in insert mode.
+vim.keymap.set('i', '<C-l>', '<C-g>u<Esc>[s1z=`]a<C-g>u')
