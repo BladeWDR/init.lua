@@ -26,6 +26,13 @@ require("lazy").setup({
 	require("plugins/harpoon"),
 	require("plugins/no-neck-pain"),
 	require("plugins/trouble"),
+	require("plugins/markdown-preview"),
+	require("plugins/zen-mode"),
+	require("plugins/twilight"),
+	require("plugins/autopairs"),
+	require("plugins/obsidian"),
+	require("plugins/noice"),
+	require("plugins/nvim-notify"),
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
