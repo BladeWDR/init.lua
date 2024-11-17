@@ -7,4 +7,4 @@ vim.g.have_nerd_font = true
 
 require("lazy-bootstrap") -- loads the lazy plugin manager
 
-require("config") -- sets Neovim options, remaps, etc.
+require("config") -- sets Neovim options, remap, etc.
