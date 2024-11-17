@@ -8,4 +8,3 @@ return {
       width = 100,
     },
 }
-

@@ -1,19 +1,12 @@
--- Load in lazy.nvim plugin manager. 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Need to set the leader key here so that the mapping is loaded before lazy.nvim
+-- Set <space> as the leader key
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-require("lazy").setup("plugins")
-require("config")
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = true
+
+
+require("lazy-bootstrap") -- loads the lazy plugin manager
+
+require("config") -- sets Neovim options, remaps, etc.

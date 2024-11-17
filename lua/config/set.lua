@@ -1,20 +1,48 @@
--- vim.opt.guicursor = ""
-
--- vim.diagnostic.config({
---     virtual_text = false, -- Turn off inline diagnostics
---     float = {
---         source = "always",
---         update_in_insert = true,
---         severity_sort = true,
---     },
--- })
---
-  -- vim.o.updatetime = 250
-  -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, max_width=80})]]
-
-vim.opt.nu = true
+-- [[ Setting options ]]
+-- See `:help vim.opt`
+vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.nu = true
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = "a"
+
+-- Don't show the mode, since it's already in the status line
+vim.opt.showmode = false
+
+-- Enable break indent
+vim.opt.breakindent = true
+
+-- Save undo history
+vim.opt.undofile = true
+
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Keep signcolumn on by default
+vim.opt.signcolumn = "yes"
+
+-- Decrease update time
+vim.opt.updatetime = 250
+
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
+
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = "split"
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
 
 -- Set the listchars options 
 vim.o.listchars = 'trail:-,nbsp:+,tab:▏ ,leadmultispace:▏ ,eol:↲'
@@ -26,34 +54,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-
-vim.opt.wrap = false
 vim.opt.cursorline = true
-
---vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-vim.opt.laststatus = 2
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 50
-
-vim.opt.fileformat = "unix"
-
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
-vim.cmd[[colorscheme tokyonight-night]]
 
 -- Add undo points for punctuation - useful when writing something other than code.
 vim.keymap.set('i', '!', '!<C-g>u', { noremap = true, silent = true })
