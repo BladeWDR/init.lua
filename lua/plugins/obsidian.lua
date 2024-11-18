@@ -29,5 +29,8 @@ return {
 			end,
 			opts = { noremap = false, expr = true, buffer = true },
 		},
+		note_id_func = function(title)
+			return title
+		end,
 	},
 }
