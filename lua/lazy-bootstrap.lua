@@ -10,30 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	require("plugins/btw"),
-	require("plugins/cmp"),
-	require("plugins/colorscheme"),
-	require("plugins/conform"),
-	require("plugins/gitsigns"),
-	require("plugins/lspconfig"),
-	require("plugins/mini"),
-	require("plugins/telescope"),
-	require("plugins/treesitter"),
-	require("plugins/vim-sleuth"),
-	require("plugins/which-key"),
-	require("plugins/lazygit"),
-	require("plugins/harpoon"),
-	require("plugins/no-neck-pain"),
-	require("plugins/trouble"),
-	require("plugins/markdown-preview"),
-	require("plugins/zen-mode"),
-	require("plugins/twilight"),
-	require("plugins/autopairs"),
-	require("plugins/obsidian"),
-	require("plugins/noice"),
-	require("plugins/nvim-notify"),
-}, {
+require("lazy").setup({ import = "plugins" }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
 			cmd = "⌘",
