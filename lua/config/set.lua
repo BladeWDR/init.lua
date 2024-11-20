@@ -3,13 +3,16 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.nu = true
-vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
+-- Disable wrapping
+vim.opt.wrap = false
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -44,8 +47,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Set the listchars options 
-vim.o.listchars = 'trail:-,nbsp:+,tab:▏ ,leadmultispace:▏ ,eol:↲'
+-- Set the listchars options
+vim.o.listchars = "trail:-,nbsp:+,tab:▏ ,leadmultispace:▏ ,eol:↲"
 vim.opt.list = true
 
 vim.opt.tabstop = 4
@@ -57,11 +60,11 @@ vim.opt.smartindent = true
 vim.opt.cursorline = true
 
 -- Add undo points for punctuation - useful when writing something other than code.
-vim.keymap.set('i', '!', '!<C-g>u', { noremap = true, silent = true })
-vim.keymap.set('i', ',', ',<C-g>u', { noremap = true, silent = true })
-vim.keymap.set('i', '.', '.<C-g>u', { noremap = true, silent = true })
-vim.keymap.set('i', ':', ':<C-g>u', { noremap = true, silent = true })
-vim.keymap.set('i', ';', ';<C-g>u', { noremap = true, silent = true })
-vim.keymap.set('i', '?', '?<C-g>u', { noremap = true, silent = true })
-vim.keymap.set('i', '(', '<C-g>u(', { noremap = true, silent = true })
-vim.keymap.set('i', ')', ')<C-g>u', { noremap = true, silent = true })
+vim.keymap.set("i", "!", "!<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", ",", ",<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", ".", ".<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", ":", ":<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", ";", ";<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", "?", "?<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", "(", "<C-g>u(", { noremap = true, silent = true })
+vim.keymap.set("i", ")", ")<C-g>u", { noremap = true, silent = true })
