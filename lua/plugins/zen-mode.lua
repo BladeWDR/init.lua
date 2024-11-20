@@ -8,7 +8,7 @@ return {
 		},
 		plugins = {
 			tmux = {
-				enabled = false,
+				enabled = true,
 			},
 			gitsigns = {
 				enabled = false,
