@@ -9,8 +9,8 @@ return {
 			.. vim.fn.expand("~")
 			.. "/git/wiki/**.md",
 		"BufNewFile " .. vim.fn.expand("~") .. "/git/wiki/**.md",
-		"BufReadPre C:\\Users\\Scott\\git\\work-notes\\**.md",
-		"BufNewFile C:\\Users\\Scott\\git\\work-notes\\**.md",
+		"BufReadPre C:/Users/Scott/git/work-notes/**.md",
+		"BufNewFile C:/Users/Scott/git/work-notes/**.md",
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -27,7 +27,7 @@ return {
 			},
 			{
 				name = "work-notes",
-				path = "C:\\Users\\Scott\\git\\work-notes",
+				path = "C:/Users/Scott/git/work-notes",
 			},
 		},
 		ui = {
