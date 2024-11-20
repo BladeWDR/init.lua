@@ -12,13 +12,13 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- copy / paste to system clipboard.
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 vim.keymap.set("n", "<leader>P", [["+P]])
 
 -- remap ctrl+c to the escape key
-vim.keymap.set({"i", "v"}, "<C-c>", "<Esc>")
+vim.keymap.set({ "i", "v" }, "<C-c>", "<Esc>")
 
 -- do search and replace for word the cursor is on in normal mode.
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -30,13 +30,13 @@ vim.keymap.set("n", "<leader>q", [[:s/\<<C-r><C-w>\>/"<C-r><C-w>"<CR>]])
 vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
 
 -- toggle wrap / nowrap
-vim.keymap.set("n", "<leader>W", ":set wrap!<CR>")
+vim.keymap.set("n", "<leader>W", ":PencilToggle<CR>")
 
 -- enable spellcheck
 vim.keymap.set("n", "<leader>z", ":setlocal spell spelllang=en_us<CR>")
 
 -- correct previous spelling mistake while in insert mode.
-vim.keymap.set('i', '<C-l>', '<C-g>u<Esc>[s1z=`]a<C-g>u')
+vim.keymap.set("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<C-g>u")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
