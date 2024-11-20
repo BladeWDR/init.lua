@@ -9,8 +9,8 @@ return {
 			.. vim.fn.expand("~")
 			.. "/git/wiki/**.md",
 		"BufNewFile " .. vim.fn.expand("~") .. "/git/wiki/**.md",
-		"BufReadPre " .. "C:\\Users\\Scott\\git\\work-notes\\**.md" .. "/git/wiki/**.md",
-		"BufNewFile " .. "C:\\Users\\Scott\\git\\work-notes\\**.md" .. "/git/wiki/**.md",
+		"BufReadPre C:\\Users\\Scott\\git\\work-notes\\**.md",
+		"BufNewFile C:\\Users\\Scott\\git\\work-notes\\**.md",
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
