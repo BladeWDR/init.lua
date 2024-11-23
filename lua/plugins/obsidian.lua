@@ -9,6 +9,8 @@ return {
 			.. vim.fn.expand("~")
 			.. "/git/wiki/**.md",
 		"BufNewFile " .. vim.fn.expand("~") .. "/git/wiki/**.md",
+		"BufReadPre " .. vim.fn.expand("~") .. "/git/work-notes/**.md",
+		"BufNewFile " .. vim.fn.expand("~") .. "/git/work-notes/**.md",
 		"BufReadPre C:/Users/Scott/git/work-notes/**.md",
 		"BufNewFile C:/Users/Scott/git/work-notes/**.md",
 	},
