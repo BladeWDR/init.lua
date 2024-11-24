@@ -226,6 +226,7 @@ return {
 				"stylua", -- Used to format Lua code
 				"pyright",
 				"bashls",
+				"markdown-oxide",
 			})
 			if os_path_separator == "\\" then
 				vim.list_extend(ensure_installed, {
