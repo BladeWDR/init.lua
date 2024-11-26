@@ -32,6 +32,9 @@ vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
 -- toggle wrap / nowrap
 vim.keymap.set("n", "<leader>W", ":PencilToggle<CR>")
 
+-- Open Obsidian daily note
+vim.keymap.set("n", "<leader>o", ":ObsidianToday<CR>")
+
 -- enable spellcheck
 vim.keymap.set("n", "<leader>z", ":setlocal spell spelllang=en_us<CR>")
 
