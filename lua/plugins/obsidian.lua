@@ -42,7 +42,7 @@ return {
 				name = "work-notes",
 				path = "~/git/work-notes",
 				overrides = {
-					notes_subdir = "00 inbox",
+					notes_subdir = "00 - inbox",
 					daily_notes = {
 						-- Optional, if you keep daily notes in a separate directory.
 						folder = "_daily",
