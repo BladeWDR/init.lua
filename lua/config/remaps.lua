@@ -1,5 +1,5 @@
 -- open the netrw panel.
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open the netrw panel" })
+--vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open the netrw panel" })
 
 -- freely move text up and down.
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
