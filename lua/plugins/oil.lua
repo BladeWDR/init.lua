@@ -2,7 +2,15 @@ return {
   'stevearc/oil.nvim',
   ---@module 'oil'
   ---@type oil.SetupOpts
-  opts = {},
+  opts = {
+    winoptions = {
+      wrap = true,
+    },
+    view_options = {
+      show_hidden = true,
+      natural_order = "fast",
+    },
+  },
   keys = { { "<leader>e", "<cmd>Oil<cr>"} },
   -- keys = {vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })},
   -- Optional dependencies
