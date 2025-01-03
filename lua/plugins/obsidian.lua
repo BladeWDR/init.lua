@@ -34,7 +34,14 @@ return {
 						-- Optional, default tags to add to each new daily note created.
 						default_tags = { "daily-notes" },
 						-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-						template = vim.NIL,
+						template = "daily note nvim.md"
+					},
+					templates = {
+						folder = "_templates",
+						date_format = "%Y-%m-%d",
+						time_format = "%H:%M",
+						-- A map for custom variables, the key should be the variable and the value a function
+						substitutions = {},
 					},
 				},
 			},
