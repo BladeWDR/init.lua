@@ -61,3 +61,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_set_keymap('n', '<leader>ms', [[:w<CR>:!bash markdown-to-email.sh "%"<CR>]], { noremap = true, silent = true })
