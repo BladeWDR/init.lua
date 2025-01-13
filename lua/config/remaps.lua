@@ -45,5 +45,4 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-
-vim.api.nvim_set_keymap('n', '<leader>ms', [[:w<CR>:!bash markdown-to-email.sh "%"<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ms', [[:w<CR>:!bash pandoc-wrapper.sh -o "%"<CR>]], { noremap = true, silent = true })
