@@ -46,3 +46,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 vim.api.nvim_set_keymap('n', '<leader>ms', [[:w<CR>:!bash pandoc-wrapper.sh -o "%"<CR>]], { noremap = true, silent = true })
+
+-- Yank current buffer path to system clipboard.
+vim.keymap.set('n', '<leader>yp', function()
+  local path = vim.fn.expand('%:p')
+  vim.fn.setreg('+', path)
+  print('Copied path: ' .. path)
+end, { noremap = true, silent = true })
