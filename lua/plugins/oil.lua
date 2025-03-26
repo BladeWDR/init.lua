@@ -6,6 +6,7 @@ return {
     winoptions = {
       wrap = true,
     },
+    default_file_explorer = true,
     view_options = {
       show_hidden = true,
       natural_order = "fast",
@@ -16,4 +17,6 @@ return {
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+  lazy = false,
+  priority = 100
 }
