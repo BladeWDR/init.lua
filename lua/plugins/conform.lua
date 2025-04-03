@@ -2,7 +2,7 @@ return { -- Autoformat
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
-	enabled = false,
+	enabled = true,
 	keys = {
 		{
 			"<leader>f",
