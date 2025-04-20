@@ -188,6 +188,16 @@ return {
 							completion = {
 								callSnippet = "Replace",
 							},
+							diagnostics = { disable = { "missing-fields" } },
+						},
+					},
+				},
+				harper_ls = {
+					settings = {
+						["harper-ls"] = {
+							linters = {
+								AvoidCurses = false,
+							},
 						},
 					},
 				},
@@ -202,6 +212,7 @@ return {
 				"pyright",
 				"bashls",
 				"markdown-oxide",
+				"harper_ls",
 			})
 			if os_path_separator == "\\" then
 				vim.list_extend(ensure_installed, {
