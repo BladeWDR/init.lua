@@ -197,6 +197,7 @@ return {
 						["harper-ls"] = {
 							linters = {
 								AvoidCurses = false,
+								SpellCheck = false,
 							},
 						},
 					},
