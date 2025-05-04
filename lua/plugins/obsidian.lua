@@ -1,6 +1,6 @@
 return {
-	"epwalsh/obsidian.nvim",
-	version = "*",
+	"obsidian-nvim/obsidian.nvim",
+	version = "v3.11.0",
 	lazy = true,
 	event = {
 		-- vim.fn.expand needed here to expand "~".
@@ -16,6 +16,7 @@ return {
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
 		workspaces = {
@@ -34,7 +35,7 @@ return {
 						-- Optional, default tags to add to each new daily note created.
 						default_tags = { "daily-notes" },
 						-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-						template = "daily note nvim.md"
+						template = "daily note nvim.md",
 					},
 					templates = {
 						folder = "_templates",
