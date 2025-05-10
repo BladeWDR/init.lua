@@ -211,6 +211,7 @@ return {
 			vim.list_extend(ensure_installed, {
 				"stylua",
 				"prettier",
+				"fixjson",
 				"pyright",
 				"bashls",
 				"markdown-oxide",
