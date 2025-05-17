@@ -5,7 +5,7 @@ return { -- Autoformat
 	enabled = true,
 	keys = {
 		{
-			"<leader>f",
+			"<leader>cb",
 			function()
 				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
@@ -27,7 +27,7 @@ return { -- Autoformat
 				lsp_format_opt = "fallback"
 			end
 			return {
-				timeout_ms = 500,
+				timeout_ms = 1500,
 				lsp_format = lsp_format_opt,
 			}
 		end,
