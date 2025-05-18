@@ -17,6 +17,10 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
+		completion = {
+			blink = true,
+			nvim_cmp = false,
+		},
 		workspaces = {
 			{
 				name = "wiki",
