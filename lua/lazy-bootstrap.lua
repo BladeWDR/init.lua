@@ -28,4 +28,8 @@ require("lazy").setup({ import = "plugins" }, {
 			lazy = "💤 ",
 		},
 	},
+	change_detection = {
+		enabled = true,
+		notify = false,
+	},
 })
